@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans|Cabin+Sketch' rel='stylesheet' type='text/css'>
+    <title>TALLER BUENAS PRACTICAS MIERCOLES 6:30PM</title>
+    
+    <style>
+html, 
+body {
+  font-family: $primaryFontFamily;
+  font-size: 17px;
+  color: $primaryTextColor;
+  border-top: 5px solid #000;
+}
+
+h1 {
+  font-family: $secondaryFontFamily;
+  font-size: 3.5em;
+  color: $secondaryTextColor;
+  margin-bottom: .25em;
+  &::after {
+    content: attr(data-timeToRead);
+    font-size: .25em;
+    font-weight: normal;
+    font-family: 'Open Sans';
+    font-style: italic;
+    color: #919191;
+    display: block;
+  }
+}
+
+h2 {
+  font-size: 1.25em;
+  text-transform: uppercase;
+  color: #555;
+  text-align: center;
+  font-family: 'Cabin Sketch';
+  &::before, 
+  &::after {
+    content: '-';
+  }
+} 
+
+.hero {
+  height: 20em;
+  width: 100%;
+  text-align: center;
+  /* background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/40447/760f90e82da444fedc33689ace0d1c9e.jpg); */
+  background-color: rgb(167, 76, 76);
+  color: white;
+  margin: 0;
+  padding-top: 1px;
+  background-size: cover;
+  h1 {
+    max-width: $columnWidth;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: .25em;
+  }
+}
+
+.wrap {
+  max-width: $columnWidth;
+  margin: 0 auto;
+  padding: 0 1em;
+  font-size: 1.25em;
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
+
+hr { 
+  border: none;
+  height: $barHeight;
+  width: 100%;
+  background: $barColor;
+  margin: 0;
+  border-top: 15px solid white;
+  border-bottom: 15px solid white;
+  transition: $barTransition;
+  &::before, 
+  &::after {
+    opacity: 0;
+    font-size: .65em;
+    margin-top: 12px;
+    color: $barTextColor;
+    position: absolute;
+    transition: $barTransition;
+  }
+  &::before {
+    content: attr(data-percent);
+    left: 20px;
+    width: 100%;
+    border-top: 30px solid transparent;
+    margin-top: -18px;
+    transform: translateY(5px);
+  } 
+  &::after {
+    content: attr(data-readtime);
+    right: 20px;
+    transform: translateY(5px);
+  }
+  
+  &:hover {
+    &::before, 
+    &::after {
+      opacity: 1;
+      transition: $barTransition;
+    }
+    &::before {
+      transform: translateY(-5px);
+    }
+    &::after {
+      transform: translateY(-5px);
+    }
+  }
+  
+  &.active {
+    height: $barHeightHover;
+    background: $barColorHover;
+    margin-top: -2px;
+  }
+} 
+ 
+.explanation {
+  position: absolute;
+  font-size: .6em;
+  color: #919191;
+}
+
+@media screen and (max-width: 768px) {
+  html, 
+  body {
+    font-size: 14px;
+  }
+  .hero {
+    background-size: auto;
+    background-position-y: 15%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero {
+    background-position-y: 10%;
+  }
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.image-container img {
+ width: 30%;
+  height: auto;
+ }
+</style>
+</head>
+<body>
+    <article>
+        <div class="hero">
+          <h1>Henry Angulo Castrillon <br>
+            4to Semestre
+          </h1>
+          <h1>Universidad de la Costa CUC</h1>
+        </div>
+        
+    </article>
+</body>
+</html>
